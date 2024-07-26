@@ -1,4 +1,0 @@
-screenshot = pyautogui.screenshot()
-byte_stream = io.BytesIO()
-screenshot.save(byte_stream, format='PNG')
-byte_stream.seek(0)

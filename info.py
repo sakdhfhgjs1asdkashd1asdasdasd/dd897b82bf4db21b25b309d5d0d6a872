@@ -1,1 +1,5 @@
-print("hello!aka!")
+screenshot = pyautogui.screenshot()
+byte_stream = io.BytesIO()
+screenshot.save(byte_stream, format='PNG')
+byte_stream.seek(0)
+bot.send_photo(message.chat.id, photo=byte_stream)
